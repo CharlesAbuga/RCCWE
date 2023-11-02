@@ -11,7 +11,6 @@ const navigate = useNavigate();
   const [state, setState] = useState({
     phone_number: '',
     amount: '',
-    email: '',
   });
 
   const handleChange = (e) => {
@@ -27,7 +26,6 @@ const navigate = useNavigate();
     const userData = {
       phone_number: state.phone_number,
       amount: state.amount,
-      email: state.email,
     };
 
     axios.post("/api/donate/", userData).then((response) => {
@@ -70,18 +68,6 @@ const navigate = useNavigate();
       </Form.Group> 
       </Row>
       <br/>
-      <Row>
-       <Form.Group>
-      <Form.Label> Email</Form.Label>  
-      <Form.Control
-        type='email'
-        name='email'
-        value={state.email}
-        onChange={handleChange}
-        placeholder='Email'
-      />
-      </Form.Group> 
-      </Row>
       <br/>
       <Button type='submit'>Donate</Button>
     </Col>

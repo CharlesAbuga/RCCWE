@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework import status
 
-from .models import Newsletter, Contact, Donation
-from .serializers import NewsLetterSerializer, ContactSerializer
+from .models import Newsletter, Contact, Subscriber
+from .serializers import NewsLetterSerializer, ContactSerializer, SubscriberSerializer
 
 
 
@@ -45,6 +46,18 @@ def getContacts(request):
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
     
+
+ 
+
+@api_view(['POST'])
+def subscribe(request):
+    if request.method == 'POST':
+        serializer = SubscriberSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=201)
+        return Response(serializer.errors, status=400)
+
 
 
 

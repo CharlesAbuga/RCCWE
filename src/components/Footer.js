@@ -1,7 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import axios from 'axios'
 
 function Footer() {
+
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubscribe = async () => {
+    try {
+      const response = await axios.post('/api/subscribe/', { email });
+      setMessage(response.data.message);
+    } catch (error) {
+      setMessage(error.response.data.error);
+    }
+  };
+
   return (
         
 <footer className="text-center text-lg-start bg-white ">
@@ -63,13 +77,14 @@ function Footer() {
 
             <Col className="col-md-auto col-12 mb-4 mb-md-0">
               <div className="form-outline mb-4">
-                <input type="email" id="form5Example25" placeholder="Email Address" className="form-control" />
+                <input type="email" id="form5Example25" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" className="form-control" />
               </div>
             </Col>
             <Col className="col-auto mb-4 mb-md-0">
-              <button type="submit" className="btn btn1 btn-primary mb-4">
+              <button onClick={handleSubscribe} className="btn btn1 btn-primary mb-4">
                 Subscribe
               </button>
+              <p>{message}</p>
             </Col>
           </Row>
       </form>

@@ -4,6 +4,6 @@ from .models import *
 admin.site.register(Newsletter)
 admin.site.register(Images)
 admin.site.register(Contact)
-admin.site.register(Donation)
+admin.site.register(Subscriber)
 
 # Register your models here.

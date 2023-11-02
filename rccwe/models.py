@@ -1,5 +1,5 @@
 from django.db import models
-
+import secrets
 
 
 class Images(models.Model):
@@ -31,11 +31,10 @@ class Contact(models.Model):
         return self.subject
 
 
-class Donation(models.Model):
-    phone_number = models.CharField(max_length=15)
-    amount = models.DecimalField(max_digits=10, decimal_places=2)
-    email = models.EmailField()
-    transaction_date = models.DateTimeField(auto_now_add=True)
+class Subscriber(models.Model):
+    email = models.EmailField(unique=True)
+    confirmation_token = models.CharField(max_length=64, default=secrets.token_urlsafe)
+    is_confirmed = models.BooleanField(default=False)
 
     def __str__(self):
         return self.email
