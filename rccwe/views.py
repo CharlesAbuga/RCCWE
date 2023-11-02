@@ -50,7 +50,7 @@ def getContacts(request):
 
 @api_view(['POST'])
 def donate(request):
-    callback_url = 'https://rccwe-1-3d3e8fafea19.herokuapp.com/express-payment'
+    callback_url = 'https://myapp/express-payment'
     account_reference = 'reference'
     transaction_desc = 'Description'
     phone_number = request.data.get('phone_number')  # Default to '0' if not found
