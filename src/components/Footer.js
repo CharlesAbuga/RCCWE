@@ -1,19 +1,37 @@
 import React, {useState} from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import axios from 'axios'
+import { useNavigate, Link } from 'react-router-dom'
+
 
 function Footer() {
 
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubscribe = async () => {
-    try {
-      const response = await axios.post('/api/subscribe/', { email });
-      setMessage(response.data.message);
-    } catch (error) {
-      setMessage(error.response.data.error);
-    }
+  const [state, setState] = useState({
+    email: '',
+  });
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setState({
+      ...state,
+      [e.target.name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const userData = {
+      email: state.email,
+    };
+
+    axios.post("/api/subscribe/", userData).then((response) => {
+      console.log(response.status, response.data);
+
+      alert("Form submitted successfully")
+      navigate('/'); 
+    });
   };
 
   return (
@@ -52,22 +70,30 @@ function Footer() {
           <h6 className="text-uppercase fw-bold mb-4">
             Useful links
           </h6>
+          <Link style={{textDecoration:'none'}}as={Link} to="/newsletters">
           <p>
-            <a href="#"  className="fancy-link">Newsletters</a>
+            <a className="fancy-link">Newsletters</a>
           </p>
+          </Link>
+          <Link style={{textDecoration:'none'}} as={Link} to="/Gallery">
           <p>
-            <a href="#!" className="fancy-link">Gallery</a>
+            <a className="fancy-link">Gallery</a>
           </p>
+          </Link>
+          <Link  style={{textDecoration:'none'}} as={Link} to="/Contact" >
           <p>
-            <a href="#!" className="fancy-link">Contact Us</a>
+            <a className="fancy-link">Contact Us</a>
           </p>
+          </Link>
+          <Link  style={{textDecoration:'none'}} as={Link} to="/Donate">
           <p>
-            <a href="#!" className="fancy-link">Our Partners</a>
+            <a  className="fancy-link">Support Us</a>
           </p>
+          </Link>
         </Col>
         <Col className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
         <div class="container p-4 pb-0">
-        <form action="">
+        <Form action='' onSubmit={handleSubmit}>
           <Row className="row">
             <Col className="col-auto mb-4 mb-md-0">
               <p className="pt-2">
@@ -77,17 +103,23 @@ function Footer() {
 
             <Col className="col-md-auto col-12 mb-4 mb-md-0">
               <div className="form-outline mb-4">
-                <input type="email" id="form5Example25" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email Address" className="form-control" />
+              <Form.Control 
+              type="email" 
+              placeholder='Email' 
+              name="email"
+              value={state.email}
+              onChange={handleChange}
+              required
+              />
               </div>
             </Col>
             <Col className="col-auto mb-4 mb-md-0">
-              <button onClick={handleSubscribe} className="btn btn1 btn-primary mb-4">
+              <Button type='submit' className="btn btn1 btn-primary mb-4">
                 Subscribe
-              </button>
-              <p>{message}</p>
+              </Button>
             </Col>
           </Row>
-      </form>
+      </Form>
       </div>
         </Col>
       </Row>

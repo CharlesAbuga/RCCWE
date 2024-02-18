@@ -8,5 +8,6 @@ urlpatterns = [
     path('newsletter/<str:pk>/', views.getSingleNewsLetter, name='singleNewsletter'),
     path('contact/', views.getContacts, name='contact'),
     path('subscribe/', views.subscribe, name='subscribe'),
+    path('donate/', views.donate, name='donate'),
 ]
 

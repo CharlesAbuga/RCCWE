@@ -4,28 +4,16 @@ import rccwe from '../static/rccwe.png'
 
 
 function Load() {
-        const loaderVariants = {
-          initial: {
-            rotate: 0,
-          },
-          animate: {
-            rotate: 360,
-            transition: {
-              duration: 1,
-              repeat: Infinity, // Infinite rotation
-              ease: 'linear',
-            },
-          },
-        };
+
   return (
-    <div className="loader">
-      <motion.img
-      src={rccwe}
-        className="spinner"
-        variants={loaderVariants}
-        initial="initial"
-        animate="animate"
-      ></motion.img>
+    <div className="loader1">
+      <div class="loader">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+
     </div>
   )
 }

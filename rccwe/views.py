@@ -2,9 +2,12 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from django.conf import settings
+from django.core.mail import EmailMessage
+from django_daraja.mpesa.core import MpesaClient
 
-from .models import Newsletter, Contact, Subscriber
-from .serializers import NewsLetterSerializer, ContactSerializer, SubscriberSerializer
+from .models import Newsletter, Contact, Subscriber, Donation
+from .serializers import NewsLetterSerializer, ContactSerializer, SubscriberSerializer, DonationSerializer
 
 
 
@@ -53,10 +56,41 @@ def getContacts(request):
 def subscribe(request):
     if request.method == 'POST':
         serializer = SubscriberSerializer(data=request.data)
+        email_address = request.data.get('email')
         if serializer.is_valid():
+
+            email = EmailMessage(
+                'Email received successfully',
+                'Thank you for accepting to be part of the team, be ready for more of our projects, thank you',
+                settings.EMAIL_HOST_USER,
+                [email_address],
+            )
+
+            email.fail_silently=False
+            email.send()
+
             serializer.save()
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
+    
+
+@api_view(['POST'])
+def donate(request):
+    callback_url = 'https://rccwe-1-3d3e8fafea19.herokuapp.com/express-payment'
+    account_reference = 'reference'
+    transaction_desc = 'Description'
+    phone_number = request.data.get('phone_number')  # Default to '0' if not found
+    amount = int(request.data.get('amount'))
+    email = request.data.get('email')
+    cl = MpesaClient()
+    response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+    if response.response_code == 0:
+        donation = Donation(phone_number=phone_number, amount=amount, email=email)
+        donation.save()
+        serializer = DonationSerializer(donation)
+        return Response(serializer.data, status=201)
+    else:
+        return Response(response, status=400)
 
 
 

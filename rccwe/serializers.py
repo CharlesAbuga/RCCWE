@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import Newsletter, Contact, Subscriber
+from .models import Newsletter, Contact, Subscriber, Donation
 
 class NewsLetterSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,4 +16,9 @@ class ContactSerializer(serializers.ModelSerializer):
 class SubscriberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscriber
-        fields = ['email']
+        fields = '__all__'
+
+class DonationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Donation
+        fields = '__all__'

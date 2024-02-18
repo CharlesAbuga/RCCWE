@@ -1,11 +1,12 @@
-import React, {useState, useEffect}from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import { Row, Col, Button, Image } from 'react-bootstrap'
 import DarkVariantExample from '../components/DarkVariantExample'
 import CardItem from '../components/CardItem'
 import axios from 'axios'
-import { motion } from 'framer-motion'; // Import Framer Motion
+import { motion, useScroll, useAnimation } from 'framer-motion'; // Import Framer Motion
 import rccwe from '../static/rccwe.png'
 import reform from '../static/reform.jpg'
+import { useInView } from "react-intersection-observer";
 
   
 
@@ -24,8 +25,26 @@ function HomeScreen() {
 
   }, []);
 
+
+  const { ref, inView } = useInView({ triggerOnce: true });
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+        },
+        initial: { x: "100vw" },
+      });
+    }
+  }, [inView]);
+
   return (
-    <div style={{ width:'100%'}}>
+    <div style={{ width:'100%', overflowX:'hidden'}}>
     <Col>
         <Row style={{padding:'40px'}}>
         <Col style={{borderRadius:'10px', marginBottom:'30px'}}>
@@ -51,6 +70,8 @@ function HomeScreen() {
           ))}
           </div>
         </Row>
+        <motion.div ref={ref} animate={animation}
+        >
         <Row>
           <Col sm={12} md={6} style={{display:'flex', justifyContent:'center', alignItems:'center', marginBottom:'30px'}}>
             <Image className='shadow' style={{ minWidth:'15em', borderRadius:'15px', padding:'15px'}}src={reform}></Image>
@@ -69,6 +90,7 @@ function HomeScreen() {
             worsen the current situation as regards the international institutions and the multilateral system."</i></span>
           </Col>
         </Row>
+        </motion.div>
     </Col>
     </div>
   )
