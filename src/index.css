@@ -3,6 +3,10 @@ main{
   width: 100%;
   padding: 0%;
   margin:0px;
+  
+}
+.body  {
+  font-family: 'Poppins', sans-serif;
 }
 
 .contact-dark{
@@ -91,7 +95,7 @@ i {
   font-size: 40px;
 }
 
-.container1{
+/* .container1{
   position: relative;
   display:flex;
   flex-wrap: wrap;
@@ -110,32 +114,153 @@ i {
  transition: 0.5s;
  padding: 20px;
  height: 20px;
-}
+} */
 
-.container1 .c1:hover .b1{
+/* .container1 .c1:hover .b1{
   height: 30rem;
   top:150px;
- }
+ } */
+
+/* .container1 .c1{
+  position:relative;
+  width:22rem;
+  min-width: 15em;
+  height: 24rem;
+  border-radius:10px;
+  transition: 0.5s;
+  justify-content: center;
+  display: flex;
+  align-items: flex-start;
+  border: none;
+}
+.container1 .c1:hover{
+  height:30rem;
+
+} */
 
 
+/* .container1 .c1 .imgBox{
+  height:15rem;
+  width:100%;
+  position: absolute;
+  transition: 0.5s;
+  top:10px;
+  object-fit: cover;
+  padding: 5px 5px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(0,0,0, 0.15)
+
+}
+
+.container1 .c1:hover .imgBox{
+  top: -100px;
+  scale:0.75;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(0,0,0, 0.15);
+
+
+} */
+ .container1{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+
+  gap: 5px;
+  padding: 20px;
+  margin: 5px;
+  width: 100%;
+  align-items: center;
+  
+  border: none;
+  border-radius: 40;
+  white-space: nowrap;
+
+  
+  flex-direction: row;}
+
+.container1 .newsLetterCard{
+  border-radius: 5px;
+  border: none;
+  width:22rem;
+  align-content: center;
+  
+
+  padding: 10px;
+
+  box-shadow: none;
+
+}
+
+.container1 .newsLetterCard .img1{
+ 
+  width:100%;
+  height:200px;
+  object-fit: cover ;
+  border-radius: 10px;
+}
+.card-body{
+  padding: 0px;
+  margin: 0px; 
+  align-items: left;
+  
+}
+.scroll-container {
+  display: flex;
+  
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  gap: 5px;
+
+
+  height:auto;
+  white-space: nowrap;
+}
+.container1 .newsLetterCard .newsLetterTitle{
+  font-size: 16px;
+  font-weight: bold;
+  word-wrap: break-word;
+  white-space: normal;
+  
+
+  
+  margin: 0px;
+}
+
+
+
+.scroll-container::-webkit-scrollbar {
+  width: 8px;  /* Set the width of the scrollbar */
+  height: 8px;  /* Set the height of the scrollbar (for horizontal scrolling) */
+}
+
+/* Styling the track (the part the scrollbar moves on) */
+.scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;  /* Light background for the track */
+  border-radius: 10px;
+}
+
+/* Styling the thumb (the draggable part of the scrollbar) */
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #888;  /* Darker color for the thumb */
+  border-radius: 10px;
+}
+
+/* Hover effect for the scrollbar thumb */
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;  
+}
  .homeDiv{
-  text-align: center;
+  text-align: left;
   justify-content: center;
   margin:20px;
   width: 70%;
-  align-items: center;
+  align-items: left;
   display:flex;
   flex-direction: column;
  }
 
- .scroll-container {
-  display: flex;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  width: 100%;
-  white-space: nowrap;
-  height:auto;
-}
 
 
 
@@ -215,55 +340,9 @@ i {
   border-radius: 50%;
 }
 
-.container1 .c1{
-  position:relative;
-  width:22rem;
-  min-width: 15em;
-  height: 24rem;
-  border-radius:10px;
-  transition: 0.5s;
-  justify-content: center;
-  display: flex;
-  align-items: flex-start;
-  border: none;
-}
-.container1 .c1:hover{
-  height:30rem;
-
-}
 
 
-.container1 .c1 .imgBox{
-  height:15rem;
-  width:100%;
-  position: absolute;
-  transition: 0.5s;
-  top:10px;
-  object-fit: cover;
-  padding: 5px 5px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 15px 45px rgba(0,0,0, 0.15)
 
-}
-
-.container1 .c1:hover .imgBox{
-  top: -100px;
-  scale:0.75;
-  overflow: hidden;
-  box-shadow: 0 15px 45px rgba(0,0,0, 0.15);
-
-
-}
-
-.container1 .c1 .imgBox .img1{
-  position: absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit: cover ;
-}
 
 
 

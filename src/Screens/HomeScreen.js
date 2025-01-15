@@ -47,21 +47,26 @@ function HomeScreen() {
     <div style={{ width:'100%', overflowX:'hidden'}}>
     <Col>
         <Row style={{padding:'40px'}}>
+        
+        <Col className='homeDiv'>
+          <h3 style={{textAlign:'left', fontWeight:'bold'}}><span style={{color:'RoyalBlue'}}>Empowering</span> Communities, Transforming Lives Since 2004.</h3>
+          <p>An organization founded in {} to better the lives of children and those in need for a prosperous future.
+          Through initiatives in education, health, and public infrastructure, we empower communities to overcome poverty and create sustainable growth.
+          </p>
+            <p style={{textAlign:'left'}}>Learn more about us</p>
+            <Button width='300' style={{width:'150px'}} className='btn btn-primary custom-btn '>About Us</Button>
+        </Col>
         <Col style={{borderRadius:'10px', marginBottom:'30px'}}>
             <DarkVariantExample/>
           </Col>
-        <Col className='homeDiv'>
-          <p>An organization founded in {} to better the lives of children and those in need for a prosperous future.
-          </p>
-            <h3>Learn more about us</h3>
-            <Button>About Us</Button>
-        </Col>
         </Row>
         <hr></hr>
         <Row>
-          <h1 style={{textAlign:'center'}}>NewsLetters</h1>
+          <h5 style={{textAlign:'center'}}>NewsLetters</h5>
+
+          <h3 style={{textAlign:'center', fontWeight:'bold'}}> <span style={{color:'RoyalBlue', paddingBottom:'10px'}}>Support </span>Transformative Initiaves That Matter </h3>
         </Row>
-        <Row className="py-3">
+        <Row  className="newsletter-row ">
         <div className="scroll-container" >
         {newsletters.map( newsletter => (
           <Col key={newsletter.id}>
