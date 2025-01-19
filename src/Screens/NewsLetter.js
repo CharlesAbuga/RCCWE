@@ -27,6 +27,11 @@ function NewsLetter() {
         console.error(error);
       }
     };
+    const handleKeyPress = (e) => {
+      if (e.key === 'Enter') {
+          handleSearch();
+      }
+  };
 
     const newsletterVariants = {
       initial: {
@@ -52,15 +57,18 @@ function NewsLetter() {
                     className="me-2"
                     aria-label="Search"
                     value={searchQuery}
+                    style={{ borderRadius: '20px' }}
                     onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={handleSearch}
+                  
                   />
-                  <Button onClick={handleSearch}>Search</Button>
+                  <Button style={{ border:'none', borderRadius:'25px' , padding:'5px, 10px',backgroundColor: 'rgba(0, 39, 209, 0.7)'}} onClick={handleSearch}>Search</Button>
     </Form>
     </div>
     <hr/>
     <Row>
     {newsletters.map( newsletter => (
-        <Col>
+        <Col key={newsletter.index} xs={12} sm={6} md={4} lg={3}>
             <CardItem newsletter={newsletter} />
         </Col>
     ))}

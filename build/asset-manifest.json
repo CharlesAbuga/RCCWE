@@ -1,22 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.1cb8f60b.css",
-    "main.js": "/static/js/main.b4aa7a67.js",
+    "main.css": "/static/css/main.a781e931.css",
+    "main.js": "/static/js/main.c4d256bb.js",
     "static/js/787.0e833b24.chunk.js": "/static/js/787.0e833b24.chunk.js",
     "static/media/pic1.jpg": "/static/media/pic1.de204e5c0949b57daaf5.jpg",
     "static/media/pic3.jpg": "/static/media/pic3.d7a68496a7248bbd5d21.jpg",
+    "static/media/pexels-illustrate-digital-ug-924569584-28101466.jpg": "/static/media/pexels-illustrate-digital-ug-924569584-28101466.4c60a86b774a11d167da.jpg",
+    "static/media/pexels-linkedin-2182970.jpg": "/static/media/pexels-linkedin-2182970.86815dd97372f6325d12.jpg",
+    "static/media/pexels-cristian-rojas-10041258.jpg": "/static/media/pexels-cristian-rojas-10041258.4f1dc232cf941bd07b95.jpg",
     "static/media/pic2.jpg": "/static/media/pic2.8f9db10fb009f61d0cc0.jpg",
     "static/media/support.jpg": "/static/media/support.3093152ca82ebaf31f20.jpg",
     "static/media/rccwe.png": "/static/media/rccwe.6c622ad5e0ffefd6f3ef.png",
+    "static/media/un-logo.png": "/static/media/un-logo.0de94a36510c1bf08567.png",
     "static/media/mpesa.png": "/static/media/mpesa.c4bad310e6a70f1f9b99.png",
     "static/media/reform.jpg": "/static/media/reform.67b31a3d9112e503db27.jpg",
+    "static/media/rccwe.svg": "/static/media/rccwe.379d6dc9074a8c27850adffa80fe00da.svg",
     "index.html": "/index.html",
-    "main.1cb8f60b.css.map": "/static/css/main.1cb8f60b.css.map",
-    "main.b4aa7a67.js.map": "/static/js/main.b4aa7a67.js.map",
+    "main.a781e931.css.map": "/static/css/main.a781e931.css.map",
+    "main.c4d256bb.js.map": "/static/js/main.c4d256bb.js.map",
     "787.0e833b24.chunk.js.map": "/static/js/787.0e833b24.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1cb8f60b.css",
-    "static/js/main.b4aa7a67.js"
+    "static/css/main.a781e931.css",
+    "static/js/main.c4d256bb.js"
   ]
 }

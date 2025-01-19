@@ -87,11 +87,12 @@ function ContactScreen() {
   }
   return (
     <div>
-    <h1 style={{textAlign:'center'}}><b>Contact Us</b></h1>
+      <br/>
+    <h4 style={{textAlign:'center'}}><b>Contact Us</b></h4>
     <p style={{textAlign:'center'}}>Fill out the form below and a member from our team will reach out to you as soon as possible</p>
-    <div style={{ display:'flex', padding:'10px', border:'1px solid black',  borderRadius:'10px', minWidth:'22em', justifyContent:'center', alignItems:'center', width:'80%', margin:'0 auto' }}>
+    <div style={{ display:'flex', padding:'10px', border:'1px solid black',  borderRadius:'10px', minWidth:'18em', justifyContent:'center', alignItems:'center', width:'80%', margin:'0 auto' }}>
     <Row style={{width:'100%', height:'100%'}}>
-      <Col sm={12} md={6} lg={5}  style={{backgroundColor:'#454f5e', borderRadius:'10px'}} > 
+      <Col sm={12} md={6} lg={5}  style={{   background: 'linear-gradient(45deg, rgba(4, 205, 245, 1), rgba(6, 44, 211, 1))', borderRadius:'10px'}} > 
       <div style={{alignItems:'center', display:'flex', justifyContent:'center', flexDirection:'row'}} >
         <motion.svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           viewBox="0 0 1024 1024" style={{ enableBackground: 'new 0 0 1024 1024', flexDirection:'row', textAlign:'center'}} xmlSpace="preserve"
@@ -174,6 +175,7 @@ function ContactScreen() {
         value={state.first_name}
         onChange={handleChange}
         required
+        style={{ borderRadius: '20px' }}
         />
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1-1">
@@ -185,6 +187,7 @@ function ContactScreen() {
         value={state.last_name}
         onChange={handleChange}
         required
+        style={{ borderRadius: '20px' }}
         />
       </Form.Group>
       <Row>
@@ -198,6 +201,7 @@ function ContactScreen() {
         value={state.email}
         onChange={handleChange}
         required
+        style={{ borderRadius: '20px' }}
         />
       </Form.Group>
       </Col>
@@ -211,6 +215,7 @@ function ContactScreen() {
         value={state.phone}
         onChange={handleChange}
         required
+        style={{ borderRadius: '20px' }}
         />
       </Form.Group>
       </Col>
@@ -223,6 +228,7 @@ function ContactScreen() {
         value={state.subject}
         onChange={handleChange}
         required 
+        style={{ borderRadius: '20px' }}
         
         />
       </Form.Group>
@@ -233,9 +239,14 @@ function ContactScreen() {
         value={state.message}
         onChange={handleChange}
         required
+        style={{ borderRadius: '20px' }}
         />
       </Form.Group>
-      <Button type="submit" className="mb-2"  >
+      <Button type="submit" className="mb-2"  style={{ border: 'none',
+      textAlign:'right',
+          padding: '5px 30px',
+          borderRadius: '25px',
+          background: 'linear-gradient(45deg, rgba(4, 205, 245, 0.7), rgba(6, 44, 211, 0.9))',}} >
        Submit
       </Button>
     </Form>

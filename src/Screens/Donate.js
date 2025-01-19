@@ -66,8 +66,8 @@ const fadeInAnimationVariants = {
     <Row style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'row',textAlign:'center'}}>
       <br/>
       <br/>
-      <h1><b> Please support us </b></h1>
-      <p> Currently only <span style={{color:'green'}}><b>Mpesa</b></span> payments are available, please fill in the information below to send any amount you're capable of so as to support our cause</p>
+      <h4 style={{color:'royalblue'}}><b> Please support us </b></h4>
+      <p style={{fontSize:'15px'}}> Currently only <span style={{color:'green'}}><b>Mpesa</b></span> payments are available, please fill in the information below to send any amount you're capable of so as to support our cause</p>
       <img src={mpesa} style={{width:'200px', height:'146px'}}></img>
       <p>Fill the form below or send to <em>+254716052228</em></p>
     </Row>
@@ -84,6 +84,7 @@ const fadeInAnimationVariants = {
         value={state.phone_number}
         onChange={handleChange}
         placeholder='Phone number'
+        style={{ borderRadius: '20px' }}
       />
       </Form.Group>  
       </Row> 
@@ -99,6 +100,7 @@ const fadeInAnimationVariants = {
         value={state.amount}
         onChange={handleChange}
         placeholder='Amount'
+        style={{ borderRadius: '20px' }}
       />
       </Form.Group> 
       </Row>
@@ -114,6 +116,7 @@ const fadeInAnimationVariants = {
         value={state.email}
         onChange={handleChange}
         placeholder='Email'
+        style={{ borderRadius: '20px' }}
       />
       </Form.Group> 
       </Row>
@@ -121,7 +124,11 @@ const fadeInAnimationVariants = {
     </Col>
     </Row>
     <br/>
-    <Button className='donateButton' type='submit'>Donate</Button>
+    <Button className='donateButton' type='submit'  style={{ border: 'none',
+      textAlign:'center',
+         
+          borderRadius: '25px',
+          background: 'linear-gradient(45deg, rgba(4, 205, 245, 0.7), rgba(6, 44, 211, 0.9))',}} >Donate</Button>
     </Form>
 
     </motion.div>

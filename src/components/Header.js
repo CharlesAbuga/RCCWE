@@ -45,9 +45,8 @@ function Header() {
             <Navbar.Brand as={Link} to="/">RCCWE</Navbar.Brand>   
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/About" className='fancy-link'>About</Nav.Link>
-            <Nav.Link as={Link} to="/Contact" className='fancy-link'>Contact Us</Nav.Link>
+          <Nav className="ms-auto">
+            
             <NavDropdown title="More" id="basic-nav-dropdown" className='fancy-link'><motion.div
                 transition={{delay:0.5}}>
 
@@ -64,6 +63,8 @@ function Header() {
               </NavDropdown.Item>
               </motion.div>
             </NavDropdown>
+            <Nav.Link as={Link} to="/About" className='fancy-link'>About</Nav.Link>
+            <Nav.Link as={Link} to="/Contact" className='fancy-link'>Contact Us</Nav.Link>
             <Nav.Link> 
             </Nav.Link>
           </Nav>

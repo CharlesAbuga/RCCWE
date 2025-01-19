@@ -15,11 +15,11 @@ function CardItem({newsletter}) {
         <Card.Body className="card-body" style={{ width: '23em', paddingTop:'15px', paddingLeft:'0',  paddingRight:'0'}} >
             <p className='newsLetterTitle' >{newsletter.title}</p>
             <p className='newsLetterText' style ={{  fontSize: '14px',color: 'grey',  paddingBottom:'10px',  wordWrap: 'break-word',  whiteSpace: 'normal',   margin: '0',  }}>
-                {newsletter.description.substring(0, 50)}...
+                {newsletter.description.substring(0, 40)}...
              </p>
              <Link to={`/newsletter/${newsletter.id}`} >
             <motion.div whileHover={{ paddingLeft:'0px', paddingRight:'0px'}} style={{ paddingTop:'10',width:'150px' ,paddingLeft:'0px',paddingRight:'0px' ,flexDirection:'row', alignItems:'center' , justifyContent:'center'}}>
-            <Button  className="btn btn-primary hover " style={{ fontSize:'14px', width:'100%', height:'100%', backgroundColor:'transparent', color:'black'}} variant="primary">View More</Button>
+            <Button  className="btn btn-primary hover " style={{ borderRadius:'20px', fontSize:'14px', width:'100%', height:'100%', backgroundColor:'transparent', color:'black'}} variant="primary">View More</Button>
             </motion.div>  
             </Link>
         </Card.Body>
